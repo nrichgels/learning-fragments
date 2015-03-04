@@ -34,6 +34,9 @@ public class MainActivity extends Activity {
             @Override
             public void onClick(View v) {
 
+                getFragmentManager().beginTransaction().
+                        replace(R.id.fragment_container, new BlueFragment())
+                        .commit();
             }
         });
 
