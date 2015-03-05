@@ -34,8 +34,15 @@ public class MainActivity extends Activity {
             @Override
             public void onClick(View v) {
 
+                Bundle bundle = new Bundle();
+                bundle.putString("key", "This is being sent from the Activity.");
+                bundle.putString("key2", "Time to party.");
+
+                BlueFragment blueFragment = new BlueFragment();
+                blueFragment.setArguments(bundle);
+
                 getFragmentManager().beginTransaction().
-                        replace(R.id.fragment_container, new BlueFragment())
+                        replace(R.id.fragment_container,blueFragment)
                         .commit();
             }
         });
